@@ -16,6 +16,11 @@ $(document).ready(function(){
 		close_bo();
 	});
 
+	setInterval(function(){
+		$('header > span').animate({'background-position-y': '+=150'}, 0);
+	}, 150);
+	// TweenLite.to($('header > span'), 0, {css:{backgroundPosition:'0px +=150px', autoAlpha: 1}});
+
 });
 
 function launch_bo(){

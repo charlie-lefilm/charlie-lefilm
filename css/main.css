@@ -259,8 +259,18 @@ header {
   left: 50%;
   margin: -260px 0 0 -175px;
   z-index: 2;
-  background: url(../img/ballon.png) no-repeat center top;
   text-align: center;
+}
+header > span {
+  display: block;
+  height: 150px;
+  width: 95px;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin: 0 0 0 -47px;
+  background: url(../img/baloons.png);
+  background-repeat: repeat-y;
 }
 header h1 {
   font-family: 'Mathlete-Bulky';
