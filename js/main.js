@@ -25,6 +25,7 @@ function launch_bo(){
 
 		setTimeout(function(){
 			$('#vimeo_trailer').fadeIn();
+			$('header').hide();
 		}, 500);
 
 	});
