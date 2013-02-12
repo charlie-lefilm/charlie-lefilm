@@ -393,11 +393,9 @@ video {
     height: 460px;
   }
   #vimeo_trailer {
-    margin-top: -300px;
-    transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-    -moz-transform: scale(0.8);
+    width: 500px;
+    height: 281px;
+    margin-top: -200px;
+    margin-left: -250px;
   }
 }
