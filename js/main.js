@@ -13,6 +13,7 @@ $(document).ready(function(){
 });
 
 function launch_bo(){
+
 	var bo_link = $('#launch_bo'),
 			charlie = $('h1'),
 			real = $('h2'),
@@ -29,6 +30,8 @@ function launch_bo(){
 		}, 500);
 
 	});
+
+	_gaq.push(['_trackEvent', 'View Trailer', 'Clic watch trailer']);
 
 }
 
