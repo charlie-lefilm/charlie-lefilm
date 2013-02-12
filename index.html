@@ -1,1 +1,102 @@
-Hello Charlie!
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <section id="main">
+
+      <header>
+
+        <h1>Charlie</h1>
+        <h2>Un film de Romain Briaux</h2>
+
+        <a href="#" id="launch_bo"><span>Bande Annonce</span></a>
+
+      </header>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Synopsis</a>
+          </li>
+          <li>
+            <a href="#">Bande annonce</a>
+          </li>
+          <li>
+            <a href="#">L'équipe</a>
+          </li>
+          <li>
+            <a href="#">Crédits</a>
+          </li>
+        </ul>
+      </nav>
+
+      <ul id="social_links">
+        <li>
+          <a href="http://twitter.com/CharlieLefilm" target="_blank">Twitter</a>
+        </li>
+        <li>
+          <a href="http://www.facebook.com/Charlielefilm" target="_blank">Facebook</a>
+        </li>
+<!--         <li>
+          <a href="#" id="mute">Mute</a>
+        </li>
+ -->      </ul>
+
+      <iframe id="vimeo_trailer" src="http://player.vimeo.com/video/59502561?title=0&amp;byline=0&amp;badge=0&amp;color=c9ff23" width="960" height="540" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+<!--       <video>
+        <source src="video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+        <source src="video.webm" type='video/webm; codecs="vp8, vorbis"' />
+      </video>
+ -->
+    </section>    
+
+    <div class="fb-like" data-href="http://www.facebook.com/Charlielefilm" data-send="true" data-width="450" data-show-faces="true"></div>
+
+    <div id="back"><img src="img/back.jpg" alt="charlie le film"></div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38445727-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=547059221994910";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+  </body>
+</html>
