@@ -214,6 +214,7 @@ select {
 */
 body {
   background: #000;
+  overflow: hidden;
 }
 /*
 ----------------------------------------
