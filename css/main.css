@@ -297,6 +297,18 @@ header a {
   bottom: 0px;
   left: 50%;
 }
+#close_trailer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -310px 0 0 450px;
+  text-indent: -9000px;
+  z-index: 4;
+  display: none;
+  width: 30px;
+  height: 30px;
+  background: url(../img/close.png) no-repeat center center;
+}
 nav ul {
   width: 442px;
   display: none;

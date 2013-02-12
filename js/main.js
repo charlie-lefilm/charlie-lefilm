@@ -6,8 +6,14 @@ $(document).ready(function(){
 
 	resizeBg();
 
-	$('#launch_bo').on('click', function(){
+	$('#launch_bo').on('click', function(e){
+		e.preventDefault();
 		launch_bo();		
+	});
+
+	$('a#close_trailer').on('click', function(e){
+		e.preventDefault();
+		close_bo();
 	});
 
 });
@@ -17,7 +23,8 @@ function launch_bo(){
 	var bo_link = $('#launch_bo'),
 			charlie = $('h1'),
 			real = $('h2'),
-			ballon = $('header');
+			ballon = $('header'),
+			close_bo = $('#close_trailer');
 
 	bo_link.fadeOut(200, function(){
 		ballon.animate({'margin-top': -$(window).height(), 'opacity': 0}, 1000);
@@ -26,12 +33,41 @@ function launch_bo(){
 
 		setTimeout(function(){
 			$('#vimeo_trailer').fadeIn();
+			close_bo.fadeIn();
 			$('header').hide();
 		}, 500);
 
 	});
 
 	_gaq.push(['_trackEvent', 'View Trailer', 'Clic watch trailer']);
+
+}
+
+function close_bo(){
+
+	var bo_link = $('#launch_bo'),
+			charlie = $('h1'),
+			real = $('h2'),
+			ballon = $('header'),
+			close_bo = $('#close_trailer');
+
+	$('header').show();
+
+	close_bo.fadeOut();
+
+	$('#vimeo_trailer').fadeOut(200, function(){
+
+		ballon.animate({'margin-top': -260, 'opacity': 1}, 1000);
+		charlie.animate({'top': 120}, 1000);
+		real.animate({'top': 300}, 1000);
+
+		setTimeout(function(){
+			bo_link.fadeIn();
+		}, 1000);
+
+	});
+
+	_gaq.push(['_trackEvent', 'View Trailer', 'Clic close trailer']);
 
 }
 
