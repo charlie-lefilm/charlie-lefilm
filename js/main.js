@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	// $('body').addClass('loading');
+
 	$(window).on('resize', function(){
 		resizeBg();
 	});
@@ -41,8 +43,6 @@ $(document).ready(function(){
 	setInterval(function(){
 		$('header > span').animate({'background-position-y': '+=150'}, 0);
 	}, 150);
-	
-	// TweenLite.to($('header > span'), 0, {css:{backgroundPosition:'0px +=150px', autoAlpha: 1}});
 
 });
 
@@ -53,6 +53,8 @@ function launch_bo(){
 			real = $('h2'),
 			ballon = $('header'),
 			close_bo = $('#close_trailer');
+
+  $('#main').append('<iframe id="vimeo_trailer" src="http://player.vimeo.com/video/59502561?title=0&amp;byline=0&amp;badge=0&amp;color=e33947" width="960" height="540" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
 
 	bo_link.fadeOut(200, function(){
 		ballon.animate({'margin-top': -$(window).height(), 'opacity': 0}, 1000);
@@ -84,7 +86,7 @@ function close_bo(){
 	close_bo.fadeOut();
 
 	$('#vimeo_trailer').fadeOut(200, function(){
-
+		$('#vimeo_trailer').remove();
 		ballon.animate({'margin-top': -260, 'opacity': 1}, 1000);
 		charlie.animate({'top': 120}, 1000);
 		real.animate({'top': 300}, 1000);
@@ -111,8 +113,8 @@ function resizeBg(){
     "height":$(window).height() + "px"
   });
 
-  var iw = 1624;
-  var ih = 1124;
+  var iw = 1400;
+  var ih = 900;
   
   if ($(window).width() > $(window).height()) {
 

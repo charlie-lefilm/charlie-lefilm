@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Charlie - Le film</title>
-    <meta name="description" content="Un vendeur de ballons fait la joie des petits et des grands tous les jours depuis 20 ans. Un beau jour, une cliente pas comme les autres va changer son quotidien...">
-    <meta name="viewport" content="width=device-width">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Charlie - Le film</title>
+	<meta name="description" content="Un vendeur de ballons fait la joie des petits et des grands tous les jours depuis 20 ans. Un beau jour, une cliente pas comme les autres va changer son quotidien...">
+	<meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/main.css">
 
-    <meta property="og:title" content="Charlie - Le film" />
-    <meta property="og:description" content="Un vendeur de ballons fait la joie des petits et des grands tous les jours depuis 20 ans. Un beau jour, une cliente pas comme les autres va changer son quotidien..." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://charlie-lefilm.fr" />
-    <meta property="og:image" content="http://charlie-lefilm.fr/img/preview.jpg" />
-    <meta property="fb:admins" content="603595767" />
+	<meta property="og:title" content="Charlie - Le film" />
+	<meta property="og:description" content="Un vendeur de ballons fait la joie des petits et des grands tous les jours depuis 20 ans. Un beau jour, une cliente pas comme les autres va changer son quotidien..." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://charlie-lefilm.fr" />
+	<meta property="og:image" content="http://charlie-lefilm.fr/img/preview.jpg" />
+	<meta property="fb:admins" content="603595767" />
 
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
-    <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
-    <![endif]-->
-
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+	<![endif]-->
+	
 </head>
 
-<body>
+<body class="loading">
+	<div id="loader">
+		<div class="wrapper">
+			<span></span>
+			<p class="loading_status">Chargement...</p>
+		</div>
+	</div>
 	<section id="main">
 		<div class="content">
 			<header id="intro" class="subcontent current">
@@ -143,11 +149,19 @@
 
 <!--	<div class="fb-like" data-href="http://www.facebook.com/Charlielefilm" data-send="true" data-width="450" data-show-faces="true"></div> -->
 	<div id="back"><img src="img/back.jpg" alt="charlie le film"></div>
+	<div class="video-background">
+      <video autoplay="true" loop="true" id="didier_boucle">
+        <source src="videos/didier-boucle-5.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+        <source src="videos/didier-boucle-5.webm" type='video/webm; codecs="vp8, vorbis"' />
+        <source src="videos/didier-boucle-5.ogv" type='video/ogg; codecs="theora, vorbis"' />
+      </video>
+    </div>
+
 	<div id="fb-root"></div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
+	<script src="js/jquery.videobackground.js"></script>
 	<script src="js/vendor/TweenMax.min.js"></script>
 	<script src="js/main.js"></script>
 
