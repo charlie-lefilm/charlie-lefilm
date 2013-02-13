@@ -23,7 +23,14 @@
         <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
     <![endif]-->
   </head>
-  <body>
+  <body class="loading">
+
+    <div id="loader">
+      <div class="wrapper">
+        <span></span>
+        <p class="loading_status">Chargement...</p>
+      </div>
+    </div>
 
     <section id="main">
 
@@ -69,24 +76,53 @@
 
 
       <a href="#" id="close_trailer">Fermer</a>
-      <iframe id="vimeo_trailer" src="http://player.vimeo.com/video/59502561?title=0&amp;byline=0&amp;badge=0&amp;color=e33947" width="960" height="540" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
-<!--       <video>
-        <source src="video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-        <source src="video.webm" type='video/webm; codecs="vp8, vorbis"' />
-      </video>
- -->
     </section>    
 
     <div class="fb-like" data-href="http://www.facebook.com/Charlielefilm" data-send="true" data-width="450" data-show-faces="true"></div>
 
-    <div id="back"><img src="img/back.jpg" alt="charlie le film"></div>
+    <div id="back">
+      <img src="img/back.jpg" alt="charlie le film">
+    </div>
+
+    <div class="video-background">
+      <video autoplay="true" loop="true" id="didier_boucle">
+        <source src="videos/didier-boucle-5.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+        <source src="videos/didier-boucle-5.webm" type='video/webm; codecs="vp8, vorbis"' />
+        <source src="videos/didier-boucle-5.ogv" type='video/ogg; codecs="theora, vorbis"' />
+      </video>
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
+    <script src="js/jquery.videobackground.js"></script>
     <script src="js/vendor/TweenMax.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        // $('.video-background').videobackground({
+        //   videoSource: [['videos/didier-boucle-5.mp4', 'video/mp4'],
+        //     ['videos/didier-boucle-5.webm', 'video/webm'], 
+        //     ['videos/didier-boucle-5.ogv', 'video/ogg']], 
+        //   poster: 'img/back.jpg',
+        //   preload: true,
+        //   resize: true,
+        //   loop: true,
+        //   autoplay: false,
+        //   controlPosition: null,
+        //   preloadCallback: function(){
+        //   },
+        //   loadedCallback: function() {
+        //     $('#loader').fadeOut(500, function(){
+        //       setTimeout(function(){
+        //         $('body').removeClass('loading');
+        //       }, 200);
+              
+        //       $('.video-background').videobackground('play');
+        //     });
+            
+        //   }
+        // });
+    </script>
 
     <script type="text/javascript">
 
