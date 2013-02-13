@@ -3,12 +3,33 @@ $(document).ready(function(){
 	$(window).on('resize', function(){
 		resizeBg();
 	});
-
+	
+	// init 
 	resizeBg();
+	
+	// animation navigation 
+	$('nav a').on('click', function(e){
+		e.preventDefault();
+		$this = $(this);
+		$content = $this.attr('href');
+		// change menu active item
+		$('section').find('nav li.current').removeClass('current');
+		$this.parent().addClass('current');
+		// display new content
+		$oldContent = $('section').find('.subcontent.current');
+		$newContent = $('section').find($content);
+		$oldContent.parent().animate({'top': '-100px'});
+		$oldContent.removeClass('current').fadeOut(500, function(){
+			$newContent.parent().css({'top':'100px'});
+			$newContent.parent().animate({'top': '0px'});
+			$newContent.fadeIn(500).addClass('current');
+		});
+		
+	});
 
 	$('#launch_bo').on('click', function(e){
 		e.preventDefault();
-		launch_bo();		
+		launch_bo();
 	});
 
 	$('a#close_trailer').on('click', function(e){
@@ -16,9 +37,11 @@ $(document).ready(function(){
 		close_bo();
 	});
 
+	// animation baloon
 	setInterval(function(){
 		$('header > span').animate({'background-position-y': '+=150'}, 0);
 	}, 150);
+	
 	// TweenLite.to($('header > span'), 0, {css:{backgroundPosition:'0px +=150px', autoAlpha: 1}});
 
 });

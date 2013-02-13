@@ -2,22 +2,22 @@
 /*
 ----------------------------------------
 
-    VARIABLES
-    
+VARIABLES
+
 ----------------------------------------
 */
 /*
 ----------------------------------------
 
-    SHORTCUTS
-    
+SHORTCUTS
+
 ----------------------------------------
 */
 /*
 ----------------------------------------
 
-    RESET
-    
+RESET
+
 ----------------------------------------
 */
 html,
@@ -89,16 +89,16 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
 }
 body {
-  line-height: 1;
+	line-height: 1;
 }
 article,
 aside,
@@ -111,294 +111,420 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+	display: block;
 }
 nav ul {
-  list-style: none;
+	list-style: none;
 }
 blockquote,
 q {
-  quotes: none;
+	quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
-  content: none;
+	content: '';
+	content: none;
 }
 a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
 }
 ins {
-  background-color: #ff9;
-  color: #000;
-  text-decoration: none;
+	background-color: #ff9;
+	color: #000;
+	text-decoration: none;
 }
 mark {
-  background-color: #ff9;
-  color: #000;
-  font-style: italic;
-  font-weight: bold;
+	background-color: #ff9;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
 }
 del {
-  text-decoration: line-through;
+	text-decoration: line-through;
 }
 abbr[title],
 dfn[title] {
-  border-bottom: 1px dotted;
-  cursor: help;
+	border-bottom: 1px dotted;
+	cursor: help;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
 }
 input,
 select {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 /*
 ----------------------------------------
 
-    FONTS
-    
+CLEARFIX
+
+----------------------------------------
+*/
+.clearfix {height:1%}
+
+.clearfix:after {
+
+	content:".";
+
+	height:0;
+
+	line-height:0;
+
+	display:block;
+
+	visibility:hidden;
+
+	clear:both;
+
+}
+/*
+----------------------------------------
+
+FONTS
+
 ----------------------------------------
 */
 @font-face {
-  font-family: 'Mathlete-Skinny';
-  src: url('../fonts/mathleteskinny.eot');
-  src: url('../fonts/mathleteskinny.eot') format('embedded-opentype'), url('../fonts/mathleteskinny.woff') format('woff'), url('../fonts/mathleteskinny.ttf') format('truetype'), url('../fonts/mathleteskinny.svg#mathleteskinny') format('svg');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Mathlete-Skinny';
+	src: url('../fonts/mathleteskinny.eot');
+	src: url('../fonts/mathleteskinny.eot') format('embedded-opentype'), url('../fonts/mathleteskinny.woff') format('woff'), url('../fonts/mathleteskinny.ttf') format('truetype'), url('../fonts/mathleteskinny.svg#mathleteskinny') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face {
-  font-family: 'Mathlete-Bulky';
-  src: url('../fonts/mathletebulky.eot');
-  src: url('../fonts/mathletebulky.eot') format('embedded-opentype'), url('../fonts/mathletebulky.woff') format('woff'), url('../fonts/mathletebulky.ttf') format('truetype'), url('../fonts/mathletebulky.svg#mathletebulky') format('svg');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Mathlete-Bulky';
+	src: url('../fonts/mathletebulky.eot');
+	src: url('../fonts/mathletebulky.eot') format('embedded-opentype'), url('../fonts/mathletebulky.woff') format('woff'), url('../fonts/mathletebulky.ttf') format('truetype'), url('../fonts/mathletebulky.svg#mathletebulky') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Didot';
+	src: url('../fonts/didot.eot');
+	src: url('../fonts/didot.eot') format('embedded-opentype'), url('../fonts/didot.ttf') format('truetype'), url('../fonts/didot.svg#didot') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 /*
 ----------------------------------------
 
-    COMMON
-    
+COMMON
+
 ----------------------------------------
 */
 /*
 ----------------------------------------
 
-    BUTTONS
-    
+BUTTONS
+
 ----------------------------------------
 */
 /*
 ----------------------------------------
 
-    GLOBAL
-    
+GLOBAL
+
 ----------------------------------------
 */
 body {
-  background: #000;
-  overflow: hidden;
+	background: #000;
+	overflow: hidden;
 }
-/*
-----------------------------------------
-
-    HEADER
-    
-----------------------------------------
-*/
 #main {
-  width: 100%;
-  height: 100%;
-  background: url(../img/black_pixel.png);
-  z-index: 1;
-  display: block;
-  top: 0px;
-  left: 0px;
-  position: absolute;
+	position: absolute;
+	width: 100%;
+	min-height: 650px;
+	height: 100%;
+	background: url(../img/black_pixel.png);
+	z-index: 1;
+	display: block;
+	top: 0px;
+	left: 0px;
 }
-.fb-like {
-  width: 440px;
-  height: 70px;
-  position: absolute !important;
-  z-index: 4;
-  bottom: 30px;
-  left: 50%;
-  margin: 0 0 0 -220px;
-  display: block;
+.content {
+	position: relative;
 }
-#vimeo_trailer {
-  display: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: -270px 0 0 -480px;
-  z-index: 4;
+.subcontent {
+	display: none;
 }
-header {
-  width: 350px;
-  height: 520px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -260px 0 0 -175px;
-  z-index: 2;
-  text-align: center;
+.current.subcontent {
+	display: block;
 }
-header > span {
-  display: block;
-  height: 150px;
-  width: 95px;
-  position: absolute;
-  top: 0px;
-  left: 50%;
-  margin: 0 0 0 -47px;
-  background: url(../img/baloons.png);
-  background-repeat: repeat-y;
-}
-header h1 {
-  font-family: 'Mathlete-Bulky';
-  font-size: 161px;
-  color: #FFF;
-  font-weight: normal;
-  position: absolute;
-  top: 120px;
-  left: 0px;
-  width: 100%;
-}
-header h2 {
-  font-family: 'Mathlete-Skinny';
-  font-size: 36px;
-  color: #FFF;
-  position: absolute;
-  top: 300px;
-  left: 0px;
-  width: 100%;
-}
-header a {
-  font-family: 'Mathlete-Bulky';
-  font-size: 36px;
-  color: #FFF;
-  font-weight: normal;
-  background: url(../img/play.png) no-repeat 35px 27px;
-  height: 100px;
-  width: 190px;
-  line-height: 100px;
-  text-align: left;
-  display: block;
-  margin: 0 0 0 -150px;
-  padding: 0 0 0 110px;
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-}
-#close_trailer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -310px 0 0 450px;
-  text-indent: -9000px;
-  z-index: 4;
-  display: none;
-  width: 30px;
-  height: 30px;
-  background: url(../img/close.png) no-repeat center center;
+nav {
+	width: 100%;
+	position: absolute;
+	bottom: 30px;
+	z-index: 2;
 }
 nav ul {
-  width: 442px;
-  display: none;
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  margin: 0 0 0 -221px;
-  z-index: 2;
+	width: 625px;
+	margin: 0 auto;
 }
 nav ul li {
-  float: left;
+	float: left;
+}
+nav ul li:hover {
+	background: no-repeat url('../img/hover_item_nav.png') center 13px;
+}
+nav ul li.current:hover {
+	background: 0;
 }
 nav ul li a {
-  font-family: 'Mathlete-Bulky';
-  font-size: 28px;
-  color: #FFF;
-  display: inline-block;
-  padding: 0 25px;
-  height: 60px;
-  line-height: 60px;
+	font-family: 'Mathlete-Bulky';
+	font-size: 30px;
+	color: #FFF;
+	display: block;
+	padding: 0 25px;
+	height: 60px;
+	line-height: 60px;
+}
+nav ul li.current a {
+	color: #e33947;
 }
 #social_links {
-  width: 120px;
-  display: block;
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  z-index: 2;
+	display: block;
+	position: absolute;
+	bottom: 70px;
+	right: 50px;
+	z-index: 2;
 }
 #social_links li {
-  float: left;
+	float: right;
 }
 #social_links li a {
-  font-family: 'Mathlete-Bulky';
-  font-size: 28px;
-  color: #FFF;
-  display: inline-block;
-  padding: 0 7px;
-  width: 25px;
-  height: 60px;
-  line-height: 60px;
-  text-indent: -9000px;
+	display: block;
+	padding: 0 7px;
+	width: 25px;
+	height: 60px;
+	line-height: 60px;
+	text-indent: -9000px;
 }
 #social_links li:nth-child(1) a {
-  background: url(../img/twitter.png) no-repeat center center;
+	background: url(../img/facebook.png) no-repeat center center;
 }
 #social_links li:nth-child(2) a {
-  background: url(../img/facebook.png) no-repeat center center;
-}
-#social_links li:nth-child(3) a {
-  background: url(../img/mute.png) no-repeat center center;
-}
-video {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+	background: url(../img/twitter.png) no-repeat center center;
 }
 /*
 ----------------------------------------
 
-    FOOTER
-    
+INTRO
+
 ----------------------------------------
 */
-@media screen and (max-height: 800px) {
-  header {
-    margin-top: -310px;
-    height: 460px;
-  }
-  #vimeo_trailer {
-    width: 500px;
-    height: 281px;
-    margin-top: -200px;
-    margin-left: -250px;
-  }
-  a#close_trailer {
-    margin: 0 0 0 -221px;
-  }
+header {
+	width: 350px;
+	margin: 80px auto 0;
+	text-align: center;
 }
+header > span {
+	position: relative;
+	top: 30px;
+	display: block;
+	margin: 0 auto;
+	height: 150px;
+	width: 95px;
+	background: url(../img/baloons.png);
+	background-repeat: repeat-y;
+}
+header h1 {
+	font-family: 'Mathlete-Bulky';
+	font-size: 161px;
+	color: #FFF;
+	font-weight: normal;
+}
+header strong {
+	font-family: 'Mathlete-Skinny';
+	font-size: 36px;
+	color: #FFF;
+	width: 100%;
+}
+
+/*
+----------------------------------------
+
+SYNOPSIS
+
+----------------------------------------
+*/
+#synopsis {
+	width: 900px;
+	margin: 100px auto 0;
+	font-size: 18px;
+	text-align: center;
+}
+#synopsis h2 {
+	font-family: 'Mathlete-Skinny';
+	color: #fff;
+	font-size: 72px;
+	padding-bottom: 6px;
+}
+#synopsis p {
+	font-family: 'Didot';
+	font-style: italic;
+	margin: 22px 0;
+	color: #e9e9e9;
+	line-height: 20px;
+	opacity: 0.8;
+}
+/*
+----------------------------------------
+
+BANDE ANNONCE
+
+----------------------------------------
+*/
+#ba {
+	width: 960px;
+	height: 540px;
+	margin: 30px auto 0;
+	background: no-repeat url('../img/loader.gif') center center #000;
+}
+/*
+----------------------------------------
+
+EQUIPE
+
+----------------------------------------
+*/
+#equipe {
+	position: relative;
+	width: 635px;
+	margin: 20px auto 0;
+}
+#equipe h2 {
+	font-family: 'Mathlete-Skinny';
+	color: #fff;
+	font-size: 72px;
+	text-align: center;
+}
+#equipe ul {
+	position: absolute;
+	font-family: 'Didot';
+	color: #e9e9e9;
+	line-height: 20px;
+}
+#equipe ul.left {
+	top: 85px;
+	left: 0;
+}
+#equipe ul.right {
+	top: 135px;
+	right: 0;
+}
+#equipe ul li {
+	width: 240px;
+	list-style: none;
+	margin: 25px;
+	background: no-repeat url('../img/bg_membre_equipe.png');
+}
+#equipe ul.left li {
+	background-position: right 0;
+	padding-right: 40px;
+	text-align: right;
+}
+#equipe ul.right li {
+	background-position: left 0;
+	padding-left: 40px;
+	text-align: left;
+}
+#equipe ul li strong {
+	font-family: 'Mathlete-Bulky';
+	color: #ffffff;
+	font-size: 30px;
+	display: block;
+	line-height: 25px;
+	padding-bottom: 8px;
+}
+#equipe ul li span {
+	display: block;
+	font-family: 'Didot';
+	color: #cac8c8;
+	line-height: 17px;
+	font-style: italic;
+}
+/*
+----------------------------------------
+
+CONCOURS
+
+----------------------------------------
+*/
+#concours {
+	width: 100%;
+	margin-top: 20px;
+	color: white;
+}
+#concours h2 {
+	font-family: 'Mathlete-Skinny';
+	color: #fff;
+	font-size: 72px;
+	text-align: center;
+}
+#concours p {
+	font-family: 'Didot';
+	color: #e9e9e9;
+	font-size: 18px;
+	font-style: italic;
+	text-align: center;
+	margin-top: 10px;
+}
+#concours p span{
+	color: #FFF;
+}
+#concours .slider{
+	margin-top: 25px;
+	width: 100%;
+	overflow: hidden;
+}
+#concours .slider ul{
+	width: 3000px;
+}
+#concours .slider ul li{
+	float: left;
+	list-style: none;
+	margin: 0 5px;
+}
+#concours .slider .nav{
+	width: 130px;
+	height: 10px;
+	margin: 20px auto 0;
+}
+#concours .slider .nav a{
+	display: block;
+	width: 23px;
+	height: 22px;
+	text-indent: -9999px;
+}
+#concours .slider .nav a:first-child{
+	float: left;
+	background: no-repeat url('../img/arrow_left_slider_concours.png');
+}
+#concours .slider .nav a:last-child{
+	float: right;
+	background: no-repeat url('../img/arrow_right_slider_concours.png');
+}
+/*
+----------------------------------------
+
+FOOTER
+
+----------------------------------------
+*/

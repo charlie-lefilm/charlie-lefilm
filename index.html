@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Charlie - Le film</title>
@@ -22,94 +22,154 @@
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
     <![endif]-->
-  </head>
-  <body>
 
-    <section id="main">
+</head>
 
-      <header>
+<body>
+	<section id="main">
+		<div class="content">
+			<header id="intro" class="subcontent current">
+				<span></span>
+				<h1>Charlie</h1>
+				<strong>Un film de Romain Briaux</strong>
+			</header>
+			<div id="synopsis" class="subcontent">
+				<h2>Synopsis de Charlie</h2>
+				<p>Charlie est parisien. Il vit dans une petite rue calme du 20e arrondissement et gagne sa vie en vendant des ballons. Chaque jour au parc des Buttes Chaumont, petits et grands s’affairent autour de son chariot pour colorer leur promenade.</p>
+				<p>Mais depuis quelques temps, le quotidien de Charlie a changé. La visite quotidienne d’une cliente spéciale le trouble.<br/> Qui est-elle ?</p>
+				<p>Couleur, fraîcheur et légèreté ! <br/> Charlie redonne le courage nécessaire pour affronter la fin de l’hiver !</p>
+				<p>N’ayons pas honte de sourire niaisement devant un ballon qui vole.</p>
+				<p>Une bulle de bonheur dans la crise ambiante !</p>
+			</div>
+			<div id="ba" class="subcontent">
+				<iframe id="vimeo_trailer" src="http://player.vimeo.com/video/59502561?title=0&amp;byline=0&amp;badge=0&amp;color=e33947" width="960" height="540" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			</div>
+			<div id="equipe" class="subcontent">
+				<h2>L'équipe</h2>
+				<ul class="left">
+					<li>
+						<strong>Romain</strong>
+						<span>Réalisateur</span>
+					</li>
+					<li>
+						<strong>Pierre</strong>
+						<span>Régisseur, taxi, recruteur d’enfants
+						 & développeur</span>
+					</li>
+					<li>
+						<strong>Gérard</strong>
+						<span>Preneur de son & développeur</span>
+					</li>
+					<li>
+						<strong>Lou</strong>
+						<span>Régisseur, râleuse & accessoiriste</span>
+					</li>
+					<li>
+						<strong>Guillaume</strong>
+						<span>Régisseur, Distributeur de bonbons
+						 & dictionnaire</span>
+					</li>
+				</ul>
+				<ul class="right">
+					<li>
+						<strong>Jules</strong>
+						<span>Assistant réal, bricoleur & designer</span>
+					</li>
+					<li>
+						<strong>Cyprien</strong>
+						<span>Clapman</span>
+					</li>
+					<li>
+						<strong>Pierre-loic</strong>
+						<span>Preneur de son & développeur</span>
+					</li>
+					<li>
+						<strong>Jessica</strong>
+						<span>Making of, making cakes & accessoiriste</span>
+					</li>
+					<li>
+						<strong>Aldric</strong>
+						<span>Monteur</span>
+					</li>
+				</ul>
+			</div>
+			<div id="concours" class="subcontent">
+				<h2>Concours photos</h2>
+				<p>Prend-toi en photo dans le décor, publie-la sur twitter avec le hashtag : <span>#CharlieLeFilm</span></p>
+				<div class="slider">
+					<ul class="clearfix">
+						<li><img src="./img/img_concours.jpg" alt="" /></li>
+						<li><img src="./img/img_concours.jpg" alt="" /></li>
+						<li><img src="./img/img_concours.jpg" alt="" /></li>
+						<li><img src="./img/img_concours.jpg" alt="" /></li>
+						<li><img src="./img/img_concours.jpg" alt="" /></li>
+						<li><img src="./img/img_concours.jpg" alt="" /></li>
+					</ul>
+					<div class="nav clearfix">
+						<a href="javascript:void(0);">Précédent</a>
+						<a href="javascript:void(0);">Suivant</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li class="current">
+					<a href="#intro">Intro</a>
+				</li>
+				<li>
+					<a href="#synopsis">Synopsis</a>
+				</li>
+				<li>
+					<a href="#ba">Bande annonce</a>
+				</li>
+				<li>
+					<a href="#equipe">L'équipe</a>
+				</li>
+				<li>
+					<a href="#concours">Concours photos</a>
+				</li>
+			</ul>
+		</nav>
+		<ul id="social_links" class="clearfix">
+			<li>
+				<a href="http://www.facebook.com/Charlielefilm" target="_blank">Facebook</a>
+			</li>
+			<li>
+				<a href="http://twitter.com/CharlieLefilm" target="_blank">Twitter</a>
+			</li>
+		</ul>
+	</section>    
 
-        <span></span>
+<!--	<div class="fb-like" data-href="http://www.facebook.com/Charlielefilm" data-send="true" data-width="450" data-show-faces="true"></div> -->
+	<div id="back"><img src="img/back.jpg" alt="charlie le film"></div>
+	<div id="fb-root"></div>
 
-        <h1>Charlie</h1>
-        <h2>Un film de Romain Briaux</h2>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
-        <a href="#" id="launch_bo"><span>Bande Annonce</span></a>
+	<script src="js/vendor/TweenMax.min.js"></script>
+	<script src="js/main.js"></script>
 
-      </header>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-38445727-1']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 
-      <nav>
-        <ul>
-          <li>
-            <a href="#">Synopsis</a>
-          </li>
-          <li>
-            <a href="#">Bande annonce</a>
-          </li>
-          <li>
-            <a href="#">L'équipe</a>
-          </li>
-          <li>
-            <a href="#">Crédits</a>
-          </li>
-        </ul>
-      </nav>
-
-      <ul id="social_links">
-        <li>
-          <a href="http://twitter.com/CharlieLefilm" target="_blank">Twitter</a>
-        </li>
-        <li>
-          <a href="http://www.facebook.com/Charlielefilm" target="_blank">Facebook</a>
-        </li>
-<!--         <li>
-          <a href="#" id="mute">Mute</a>
-        </li>
- -->      </ul>
-
-
-      <a href="#" id="close_trailer">Fermer</a>
-      <iframe id="vimeo_trailer" src="http://player.vimeo.com/video/59502561?title=0&amp;byline=0&amp;badge=0&amp;color=e33947" width="960" height="540" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
-<!--       <video>
-        <source src="video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-        <source src="video.webm" type='video/webm; codecs="vp8, vorbis"' />
-      </video>
- -->
-    </section>    
-
-    <div class="fb-like" data-href="http://www.facebook.com/Charlielefilm" data-send="true" data-width="450" data-show-faces="true"></div>
-
-    <div id="back"><img src="img/back.jpg" alt="charlie le film"></div>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
-    <script src="js/vendor/TweenMax.min.js"></script>
-    <script src="js/main.js"></script>
-
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-38445727-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
-
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=547059221994910";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-  </body>
+	<script>
+		(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=547059221994910";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+</body>
 </html>
