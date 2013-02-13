@@ -99,29 +99,29 @@
     <script src="js/vendor/TweenMax.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        // $('.video-background').videobackground({
-        //   videoSource: [['videos/didier-boucle-5.mp4', 'video/mp4'],
-        //     ['videos/didier-boucle-5.webm', 'video/webm'], 
-        //     ['videos/didier-boucle-5.ogv', 'video/ogg']], 
-        //   poster: 'img/back.jpg',
-        //   preload: true,
-        //   resize: true,
-        //   loop: true,
-        //   autoplay: false,
-        //   controlPosition: null,
-        //   preloadCallback: function(){
-        //   },
-        //   loadedCallback: function() {
-        //     $('#loader').fadeOut(500, function(){
-        //       setTimeout(function(){
-        //         $('body').removeClass('loading');
-        //       }, 200);
+        $('.video-background').videobackground({
+          videoSource: [['videos/didier-boucle-5.mp4', 'video/mp4'],
+            ['videos/didier-boucle-5.webm', 'video/webm'], 
+            ['videos/didier-boucle-5.ogv', 'video/ogg']], 
+          poster: 'img/back.jpg',
+          preload: true,
+          resize: true,
+          loop: true,
+          autoplay: false,
+          controlPosition: null,
+          preloadCallback: function(){
+          },
+          loadedCallback: function() {
+            // $('#loader').fadeOut(500, function(){
+            //   setTimeout(function(){
+            //     $('body').removeClass('loading');
+            //   }, 200);
               
-        //       $('.video-background').videobackground('play');
-        //     });
+              $('.video-background').videobackground('play');
+            // });
             
-        //   }
-        // });
+          }
+        });
     </script>
 
     <script type="text/javascript">

@@ -284,7 +284,7 @@ body.loading .fb-like {
   opacity: 0;
 }
 #vimeo_trailer {
-  display: none;
+  display: block;
   position: absolute;
   left: 50%;
   top: 50%;
