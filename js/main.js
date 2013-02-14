@@ -50,8 +50,7 @@ $(document).ready(function(){
 	// get tweet 
 	$.ajax({
 		type: "GET",
-		url: "http://tweet.charlie-lefilm.fr",
-		dataType: "json"
+		url: "http://tweet.charlie-lefilm.fr"
 	}).success(function(resp){
 		console.log(resp);
 	});
