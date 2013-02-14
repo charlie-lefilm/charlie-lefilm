@@ -56,6 +56,7 @@ $(document).ready(function(){
 		// slider content width
 		var sliderWidth = 350*($("#concours .slider img").length); 
 		$('#concours .slider ul').css({'width': sliderWidth});
+		$('#concours .slider .nav').fadeIn(300);
 	}).error(function() {
 		 $('#concours .slider').html('<p>Galerie bientôt disponible !</p>');
 	});
@@ -63,13 +64,18 @@ $(document).ready(function(){
 	// animation slider 
 	$('#concours .nav a.previous').on('click', function(e){
 		e.preventDefault();
-		if($('#concours .slider ul').position().left<=-10){
+		if($('#concours .slider ul').position().left<=-200){
 			$('#concours .slider ul').stop().animate({'left': '+=400px'});
 		}
 	});
 	$('#concours .nav a.next').on('click', function(e){
 		e.preventDefault();
 		var limitWidth = -($('#concours .slider ul img').last().position().left)-$(window).width();
+	//	var limitWidth = 0;
+	/*	$('#concours .slider ul').each('img', function()){
+			
+		} */
+		limitWidth += $('#concours .slider ul img').width()+10
 		console.log(limitWidth);
 		if($('#concours .slider ul').position().left>=limitWidth){
 			$('#concours .slider ul').stop().animate({'left': '-=400px'});

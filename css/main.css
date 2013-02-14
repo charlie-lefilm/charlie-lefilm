@@ -586,6 +586,7 @@ CONCOURS
 	width: 100%;
 }
 #concours .slider .nav{
+	display: none;
 	width: 130px;
 	height: 10px;
 	margin: 20px auto 0;
