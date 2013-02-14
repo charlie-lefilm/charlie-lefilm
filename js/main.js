@@ -215,15 +215,16 @@ $(document).ready(function(){
 				$newContent.parent().css({'top':'100px'});
 				$newContent.parent().stop().animate({'top': '0px'});
 				$newContent.fadeIn(500).addClass('current');
+				// resize widthSlider concours
+				if($this.parent().hasClass('concours')){
+					$('#concours .slider ul img').each(function(index){
+						widthSlider += $(this).width()+10;
+						$('#concours .slider ul').css({'width': widthSlider});
+						console.log($(this).width());
+					});
+				}
 				resizeContent();
 			});
-			// resize widthSlider concours
-			if($this.parent().hasClass('concours')){
-				$('#concours .slider ul img').each(function(index){
-					widthSlider += $(this).width()+10;
-					$('#concours .slider ul').css({'width': widthSlider});
-				});
-			}
 		}
 	});
 
