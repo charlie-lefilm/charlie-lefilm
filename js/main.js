@@ -47,15 +47,19 @@ $(document).ready(function(){
 		}
 	});
 	
-	$.ajax({
+/*	$.ajax({
 		type: "GET",
-		url: "tweet.charlie-lefilm.fr",
+		url: "http://tweet.charlie-lefilm.fr",
 		dataType: 'json',
 		success: function(json) {
 			console.log(json);
 		}, error: function(json) {
 			console.log(json);
 		}
+	});*/
+	
+	$.getJSON('http://tweet.charlie-lefilm.fr', function(data) {
+	  console.log('yessss');
 	});
 	//$('#concours .slider ul').html('<li><img src="./img/img_concours.jpg"></li>');
 	
