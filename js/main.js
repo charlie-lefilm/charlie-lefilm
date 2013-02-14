@@ -54,7 +54,7 @@ $(document).ready(function(){
 			$('#concours .slider ul').append('<li><img src="'+item.image+'"></li>');
 		});
 		// slider content width
-		var sliderWidth = 350*($("#concours .slider img").length); 
+		var sliderWidth = 500*($("#concours .slider img").length); 
 		$('#concours .slider ul').css({'width': sliderWidth});
 		$('#concours .slider .nav').fadeIn(300);
 	}).error(function() {
