@@ -69,7 +69,7 @@ function initSlider(){
 			//	$('#concours .slider ul').css({'width': widthSlider});
 			});
 		});
-		widthSlider = 8000;
+		widthSlider = 10000;
 		$('#concours .slider ul').css({'width': widthSlider});
 		$('#concours .slider .nav').fadeIn(300);
 	}).error(function() {
