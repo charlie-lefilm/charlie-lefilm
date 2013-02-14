@@ -4,18 +4,16 @@ $(document).ready(function(){
 
 	$(window).on('resize', function(){
 		resizeBg();
+		resizeContent();
 	});
 	
 	// init 
 	resizeBg();
+	resizeContent();
 	$videoVimeo=$('#ba iframe');
 	
 	// display scroll
 	//displayScroll();
-	
-	// slider content width
-	var sliderWidth = 350*($("#concours .slider img").length); 
-	$('#concours .slider ul').css({'width': sliderWidth});
 	
 	// animation navigation 
 	$('nav a').on('click', function(e){
@@ -44,8 +42,7 @@ $(document).ready(function(){
 				$newContent.parent().css({'top':'100px'});
 				$newContent.parent().stop().animate({'top': '0px'});
 				$newContent.fadeIn(500).addClass('current');
-				var marginTop = ($(window).height/2)-($newContent.height()/2)-90;
-				$newContent.css({'margin-top': marginTop+'px'});
+				resizeContent();
 			});
 		}
 	});
@@ -58,7 +55,11 @@ $(document).ready(function(){
 	}).success(function(resp){
 		console.log(resp);
 	});
-	$('#concours .slider ul').html('<li><img src="./img/img_concours.jpg"></li>');
+	//$('#concours .slider ul').html('<li><img src="./img/img_concours.jpg"></li>');
+	
+	// slider content width
+	var sliderWidth = 350*($("#concours .slider img").length); 
+	$('#concours .slider ul').css({'width': sliderWidth});
 	
 	// animation slider 
 	$('#concours .nav a.previous').on('click', function(e){
@@ -149,44 +150,44 @@ function displayScroll(){
 
 function resizeBg(){
 
-  $("#back").css({
-    "position":"fixed",
-    "top":"0px",
-    "left":"0px",
-    "overflow":"hidden",
-    "z-index": "-1",
-    "width":$(window).width() + "px",
-    "height":$(window).height() + "px"
-  });
+	$("#back").css({
+		"position":"fixed",
+		"top":"0px",
+		"left":"0px",
+		"overflow":"hidden",
+		"z-index": "-1",
+		"width":$(window).width() + "px",
+		"height":$(window).height() + "px"
+	});
 
-  var iw = 1400;
-  var ih = 900;
-  
-  if ($(window).width() > $(window).height()) {
+	var iw = 1400;
+	var ih = 900;
 
-    if (iw > ih) {
-        var fRatio = iw/ih;
-        $("#back").children('img').css("width",$(window).width() + "px");
-        $("#back").children('img').css("height",Math.round($(window).width() * (1/fRatio)));
+	if ($(window).width() > $(window).height()) {
 
-        var newIh = Math.round($(window).width() * (1/fRatio));
+		if (iw > ih) {
+			var fRatio = iw/ih;
+			$("#back").children('img').css("width",$(window).width() + "px");
+			$("#back").children('img').css("height",Math.round($(window).width() * (1/fRatio)));
 
-        if(newIh < $(window).height()) {
-            var fRatio = ih/iw;
-            $("#back").children('img').css("height",$(window).height());
-            $("#back").children('img').css("width",Math.round($(window).height() * (1/fRatio)));
-        }
-    } else {
-        var fRatio = ih/iw;
-        $("#back").children('img').css("height",$(window).height());
-        $("#back").children('img').css("width",Math.round($(window).height() * (1/fRatio)));
-    }
+			var newIh = Math.round($(window).width() * (1/fRatio));
 
-  } else {
-      var fRatio = ih/iw;
-      $("#back").children('img').css("height",$(window).height());
-      $("#back").children('img').css("width",Math.round($(window).height() * (1/fRatio)));
-  }
+			if(newIh < $(window).height()) {
+				var fRatio = ih/iw;
+				$("#back").children('img').css("height",$(window).height());
+				$("#back").children('img').css("width",Math.round($(window).height() * (1/fRatio)));
+			}
+		} else {
+			var fRatio = ih/iw;
+			$("#back").children('img').css("height",$(window).height());
+			$("#back").children('img').css("width",Math.round($(window).height() * (1/fRatio)));
+		}
+
+	} else {
+		var fRatio = ih/iw;
+		$("#back").children('img').css("height",$(window).height());
+		$("#back").children('img').css("width",Math.round($(window).height() * (1/fRatio)));
+	}
 
 	if ($("#back").children('img').width() > $(window).width()) {
 		var this_left = ($("#back").children('img').width() - $(window).width()) / 2;
@@ -202,5 +203,15 @@ function resizeBg(){
 			"top" : -this_height
 		});
 	}
+}
 
+function resizeContent(){
+	if($("#main").height() > 650){
+		var middleWindow = ($(window).height()-90)/2;
+		var middleContent = $("#main .subcontent.current").height()/2;
+		console.log(middleWindow-middleContent, 'position');
+		$("#main .subcontent.current").css({
+			"margin-top": (parseInt(middleWindow-middleContent))+"px"
+		});
+	}
 }

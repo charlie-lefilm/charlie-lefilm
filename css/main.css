@@ -471,6 +471,7 @@ EQUIPE
 #equipe {
 	position: relative;
 	width: 635px;
+	height: 550px;
 	margin: 20px auto 0;
 }
 #equipe h2 {
@@ -577,6 +578,12 @@ CONCOURS
 #concours .slider ul li img{
 	height: 379px;
 	width: auto;
+}
+#concours .slider p{
+	margin-top: 100px;
+	font-size: 26px;
+	text-align: center;
+	width: 100%;
 }
 #concours .slider .nav{
 	width: 130px;
