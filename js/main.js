@@ -49,7 +49,7 @@ $(document).ready(function(){
 	
 	$.ajax({
 		type: "GET",
-		url: "http://tweet.charlie-lefilm.fr",
+		url: "tweet.charlie-lefilm.fr",
 		dataType: 'json',
 		success: function(json) {
 			console.log(json);
