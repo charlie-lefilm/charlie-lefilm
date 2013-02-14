@@ -8,25 +8,37 @@ $(document).ready(function(){
 	
 	// init 
 	resizeBg();
+	$videoVimeo=$('#ba iframe');
 	
 	// animation navigation 
 	$('nav a').on('click', function(e){
 		e.preventDefault();
 		$this = $(this);
-		$content = $this.attr('href');
-		// change menu active item
-		$('section').find('nav li.current').removeClass('current');
-		$this.parent().addClass('current');
-		// display new content
-		$oldContent = $('section').find('.subcontent.current');
-		$newContent = $('section').find($content);
-		$oldContent.parent().animate({'top': '-100px'});
-		$oldContent.removeClass('current').fadeOut(500, function(){
-			$newContent.parent().css({'top':'100px'});
-			$newContent.parent().animate({'top': '0px'});
-			$newContent.fadeIn(500).addClass('current');
-		});
-		
+		if($this.parent().hasClass('current')){
+			return false;
+		}else{
+			$content = $this.attr('href');
+			// if display ba, stop video bg || if last display was ba, play video bg
+			if($this.parent().hasClass('ba_link')){
+				$('#ba').html($videoVimeo);
+				$('.video-background').videobackground('play');
+			}else if($('section').find('nav li.current').hasClass('ba_link')){
+				$('.video-background').videobackground('play');
+				$('#ba iframe').remove();
+			}
+			// change menu active item
+			$('section').find('nav li.current').removeClass('current');
+			$this.parent().addClass('current');
+			// display new content
+			$oldContent = $('section').find('.subcontent.current');
+			$newContent = $('section').find($content);
+			$oldContent.parent().animate({'top': '-100px'});
+			$oldContent.removeClass('current').fadeOut(500, function(){
+				$newContent.parent().css({'top':'100px'});
+				$newContent.parent().animate({'top': '0px'});
+				$newContent.fadeIn(500).addClass('current');
+			});
+		}
 	});
 
 	$('#launch_bo').on('click', function(e){
