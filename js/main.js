@@ -47,25 +47,18 @@ $(document).ready(function(){
 		}
 	});
 	
-/*	$.ajax({
-		type: "GET",
-		url: "http://tweet.charlie-lefilm.fr",
-		dataType: 'json',
-		success: function(json) {
-			console.log(json);
-		}, error: function(json) {
-			console.log(json);
-		}
-	});*/
-	
-	$.getJSON('http://tweet.charlie-lefilm.fr', function(data) {
-	  console.log('yessss');
+	//get img tweet 
+	$.getJSON('http://tweet.charlie-lefilm.fr')
+	.success(function(data) {
+		$.each(data, function(i,item){
+			$('#concours .slider ul').append('<li><img src="'+item.image+'"></li>');
+		});
+		// slider content width
+		var sliderWidth = 350*($("#concours .slider img").length); 
+		$('#concours .slider ul').css({'width': sliderWidth});
+	}).error(function() {
+		 $('#concours .slider').html('<p>Galerie bientôt disponible !</p>');
 	});
-	//$('#concours .slider ul').html('<li><img src="./img/img_concours.jpg"></li>');
-	
-	// slider content width
-	var sliderWidth = 350*($("#concours .slider img").length); 
-	$('#concours .slider ul').css({'width': sliderWidth});
 	
 	// animation slider 
 	$('#concours .nav a.previous').on('click', function(e){
