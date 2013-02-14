@@ -10,6 +10,13 @@ $(document).ready(function(){
 	resizeBg();
 	$videoVimeo=$('#ba iframe');
 	
+	// display scroll
+	//displayScroll();
+	
+	// slider content width
+	var sliderWidth = 350*($("#concours .slider img").length); 
+	$('#concours .slider ul').css({'width': sliderWidth});
+	
 	// animation navigation 
 	$('nav a').on('click', function(e){
 		e.preventDefault();
@@ -32,23 +39,41 @@ $(document).ready(function(){
 			// display new content
 			$oldContent = $('section').find('.subcontent.current');
 			$newContent = $('section').find($content);
-			$oldContent.parent().animate({'top': '-100px'});
+			$oldContent.parent().stop().animate({'top': '-100px'});
 			$oldContent.removeClass('current').fadeOut(500, function(){
 				$newContent.parent().css({'top':'100px'});
-				$newContent.parent().animate({'top': '0px'});
+				$newContent.parent().stop().animate({'top': '0px'});
 				$newContent.fadeIn(500).addClass('current');
+				var marginTop = ($(window).height/2)-($newContent.height()/2)-90;
+				$newContent.css({'margin-top': marginTop+'px'});
 			});
 		}
 	});
-
-	$('#launch_bo').on('click', function(e){
-		e.preventDefault();
-		launch_bo();
+	
+	// get tweet 
+	$.ajax({
+		type: "GET",
+		url: "http://tweet.charlie-lefilm.fr",
+		dataType: "json"
+	}).success(function(resp){
+		console.log(resp);
 	});
-
-	$('a#close_trailer').on('click', function(e){
+	$('#concours .slider ul').html('<li><img src="./img/img_concours.jpg"></li>');
+	
+	// animation slider 
+	$('#concours .nav a.previous').on('click', function(e){
 		e.preventDefault();
-		close_bo();
+		if($('#concours .slider ul').position().left<=-10){
+			$('#concours .slider ul').stop().animate({'left': '+=400px'});
+		}
+	});
+	$('#concours .nav a.next').on('click', function(e){
+		e.preventDefault();
+		var limitWidth = -($('#concours .slider ul img').last().position().left)-$(window).width();
+		console.log(limitWidth);
+		if($('#concours .slider ul').position().left>=limitWidth){
+			$('#concours .slider ul').stop().animate({'left': '-=400px'});
+		}
 	});
 
 	// animation baloon
@@ -111,6 +136,15 @@ function close_bo(){
 
 	_gaq.push(['_trackEvent', 'View Trailer', 'Clic close trailer']);
 
+}
+
+function displayScroll(){
+	if($(window).height() < 650){
+		$('body').css({'overflow-y': 'auto'});
+	}
+	if($(window).width() < 960){
+		$('body').css({'overflow-x': 'auto'});
+	}
 }
 
 function resizeBg(){
