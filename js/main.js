@@ -66,11 +66,11 @@ function initSlider(){
 			$(this).load(function() {
 				widthSlider += $(this).width()+10;
 				console.log(widthSlider);
-			//	$('#concours .slider ul').css({'width': widthSlider});
+				$('#concours .slider ul').css({'width': widthSlider});
 			});
-		});
-		widthSlider = 10000;
-		$('#concours .slider ul').css({'width': widthSlider});
+		}); 
+		//widthSlider = 10000;
+		//$('#concours .slider ul').css({'width': widthSlider});
 		$('#concours .slider .nav').fadeIn(300);
 	}).error(function() {
 		 $('#concours .slider').html('<p>Galerie bientôt disponible !</p>');
@@ -80,14 +80,14 @@ function initSlider(){
 	$('#concours .nav a.previous').on('click', function(e){
 		e.preventDefault();
 		if($('#concours .slider ul').position().left<=-200){
-			$('#concours .slider ul').stop().animate({'left': '+=400px'});
+			$('#concours .slider ul').stop().animate({'left': '+=400px'}, 500, 'easeInOutExpo');
 		}
 	});
 	$('#concours .nav a.next').on('click', function(e){
 		e.preventDefault();	
 		limitWidth = $('#concours .slider ul').position().left + widthSlider;
 		if(limitWidth > $(window).width()){
-			$('#concours .slider ul').stop().animate({'left': '-=400px'});
+			$('#concours .slider ul').stop().animate({'left': '-=400px'}, 500, 'easeInOutExpo');
 		}
 	});
 }
@@ -203,15 +203,6 @@ $(document).ready(function(){
 			}else if($('section').find('nav li.current').hasClass('ba_link')){
 				$('.video-background').videobackground('play');
 				$('#ba iframe').remove();
-			}else if($this.parent().hasClass('concours')){
-				// slider content width
-			/*	$('#concours .slider ul img').each(function(index){
-					$(this).load(function() {
-						widthSlider += $(this).width()+10;
-						console.log(widthSlider);
-						$('#concours .slider ul').css({'width': widthSlider});
-					});
-				}); */
 			}
 			// change menu active item
 			$('section').find('nav li.current').removeClass('current');
@@ -226,6 +217,13 @@ $(document).ready(function(){
 				$newContent.fadeIn(500).addClass('current');
 				resizeContent();
 			});
+			// resize widthSlider concours
+			if($this.parent().hasClass('concours')){
+				$('#concours .slider ul img').each(function(index){
+					widthSlider += $(this).width()+10;
+					$('#concours .slider ul').css({'width': widthSlider});
+				});
+			}
 		}
 	});
 
