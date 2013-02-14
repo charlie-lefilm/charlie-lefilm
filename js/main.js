@@ -1,92 +1,3 @@
-$(document).ready(function(){
-
-	// $('body').addClass('loading');
-
-	$(window).on('resize', function(){
-		resizeBg();
-		resizeContent();
-	});
-	
-	// init 
-	resizeBg();
-	resizeContent();
-	$videoVimeo=$('#ba iframe');
-	
-	// display scroll
-	//displayScroll();
-	
-	// animation navigation 
-	$('nav a').on('click', function(e){
-		e.preventDefault();
-		$this = $(this);
-		if($this.parent().hasClass('current')){
-			return false;
-		}else{
-			$content = $this.attr('href');
-			// if display ba, stop video bg || if last display was ba, play video bg
-			if($this.parent().hasClass('ba_link')){
-				$('#ba').html($videoVimeo);
-				$('.video-background').videobackground('play');
-			}else if($('section').find('nav li.current').hasClass('ba_link')){
-				$('.video-background').videobackground('play');
-				$('#ba iframe').remove();
-			}
-			// change menu active item
-			$('section').find('nav li.current').removeClass('current');
-			$this.parent().addClass('current');
-			// display new content
-			$oldContent = $('section').find('.subcontent.current');
-			$newContent = $('section').find($content);
-			$oldContent.parent().stop().animate({'top': '-100px'});
-			$oldContent.removeClass('current').fadeOut(500, function(){
-				$newContent.parent().css({'top':'100px'});
-				$newContent.parent().stop().animate({'top': '0px'});
-				$newContent.fadeIn(500).addClass('current');
-				resizeContent();
-			});
-		}
-	});
-	
-	//get img tweet 
-	$.getJSON('http://tweet.charlie-lefilm.fr')
-	.success(function(data) {
-		$.each(data, function(i,item){
-			$('#concours .slider ul').append('<li><img src="'+item.image+'"></li>');
-		});
-		// slider content width
-		var sliderWidth = 500*($("#concours .slider img").length); 
-		$('#concours .slider ul').css({'width': sliderWidth});
-		$('#concours .slider .nav').fadeIn(300);
-	}).error(function() {
-		 $('#concours .slider').html('<p>Galerie bientôt disponible !</p>');
-	});
-	
-	// animation slider 
-	$('#concours .nav a.previous').on('click', function(e){
-		e.preventDefault();
-		if($('#concours .slider ul').position().left<=-200){
-			$('#concours .slider ul').stop().animate({'left': '+=400px'});
-		}
-	});
-	$('#concours .nav a.next').on('click', function(e){
-		e.preventDefault();
-		var limitWidth = -($('#concours .slider ul img').last().position().left)-$(window).width();
-	//	var limitWidth = 0;
-	/*	$('#concours .slider ul').each('img', function(this){
-			limitWidth += $(this).width()+10;
-		}); */
-		console.log(limitWidth);
-	//	if($('#concours .slider ul').position().left>=limitWidth){
-			$('#concours .slider ul').stop().animate({'left': '-=400px'});
-	//	}
-	});
-
-	// animation baloon
-	setInterval(function(){
-		$('header > span').animate({'background-position-y': '+=150'}, 0);
-	}, 150);
-
-});
 
 function launch_bo(){
 
@@ -141,6 +52,44 @@ function close_bo(){
 
 	_gaq.push(['_trackEvent', 'View Trailer', 'Clic close trailer']);
 
+}
+
+function initSlider(){
+	//get img tweet 
+	$.getJSON('http://tweet.charlie-lefilm.fr')
+	.success(function(data) {
+		$.each(data, function(i,item){
+			$('#concours .slider ul').append('<li><img src="'+item.image+'"></li>');
+		});
+		// slider content width
+		$('#concours .slider ul img').each(function(index){
+			$(this).load(function() {
+				widthSlider += $(this).width()+10;
+				console.log(widthSlider);
+				$('#concours .slider ul').css({'width': widthSlider});
+			});
+		});
+	//	widthSlider = 8000;
+	//	$('#concours .slider ul').css({'width': widthSlider});
+		$('#concours .slider .nav').fadeIn(300);
+	}).error(function() {
+		 $('#concours .slider').html('<p>Galerie bientôt disponible !</p>');
+	});
+	
+	// animation slider 
+	$('#concours .nav a.previous').on('click', function(e){
+		e.preventDefault();
+		if($('#concours .slider ul').position().left<=-200){
+			$('#concours .slider ul').stop().animate({'left': '+=400px'});
+		}
+	});
+	$('#concours .nav a.next').on('click', function(e){
+		e.preventDefault();	
+		limitWidth = $('#concours .slider ul').position().left + widthSlider;
+		if(limitWidth > $(window).width()){
+			$('#concours .slider ul').stop().animate({'left': '-=400px'});
+		}
+	});
 }
 
 function displayScroll(){
@@ -219,3 +168,61 @@ function resizeContent(){
 		});
 	}
 }
+
+$(document).ready(function(){
+
+	// $('body').addClass('loading');
+
+	$(window).on('resize', function(){
+		resizeBg();
+		resizeContent();
+	});
+	
+	// init 
+	resizeBg();
+	resizeContent();
+	$videoVimeo=$('#ba iframe');
+	widthSlider = 0;
+	initSlider();
+	
+	// display scroll
+	//displayScroll();
+	
+	// animation navigation 
+	$('nav a').on('click', function(e){
+		e.preventDefault();
+		$this = $(this);
+		if($this.parent().hasClass('current')){
+			return false;
+		}else{
+			$content = $this.attr('href');
+			// if display ba, stop video bg || if last display was ba, play video bg
+			if($this.parent().hasClass('ba_link')){
+				$('#ba').html($videoVimeo);
+				$('.video-background').videobackground('play');
+			}else if($('section').find('nav li.current').hasClass('ba_link')){
+				$('.video-background').videobackground('play');
+				$('#ba iframe').remove();
+			}
+			// change menu active item
+			$('section').find('nav li.current').removeClass('current');
+			$this.parent().addClass('current');
+			// display new content
+			$oldContent = $('section').find('.subcontent.current');
+			$newContent = $('section').find($content);
+			$oldContent.parent().stop().animate({'top': '-100px'});
+			$oldContent.removeClass('current').fadeOut(500, function(){
+				$newContent.parent().css({'top':'100px'});
+				$newContent.parent().stop().animate({'top': '0px'});
+				$newContent.fadeIn(500).addClass('current');
+				resizeContent();
+			});
+		}
+	});
+
+	// animation baloon
+	setInterval(function(){
+		$('header > span').animate({'background-position-y': '+=150'}, 0);
+	}, 150);
+
+});
