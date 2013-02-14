@@ -70,7 +70,7 @@ function initSlider(){
 			});
 		});
 	//	widthSlider = 8000;
-	//	$('#concours .slider ul').css({'width': widthSlider});
+		$('#concours .slider ul').css({'width': widthSlider});
 		$('#concours .slider .nav').fadeIn(300);
 	}).error(function() {
 		 $('#concours .slider').html('<p>Galerie bientôt disponible !</p>');
