@@ -66,11 +66,11 @@ function initSlider(){
 			$(this).load(function() {
 				widthSlider += $(this).width()+10;
 				console.log(widthSlider);
-				$('#concours .slider ul').css({'width': widthSlider});
+			//	$('#concours .slider ul').css({'width': widthSlider});
 			});
 		});
-	//	widthSlider = 8000;
-		$('#concours .slider ul').css({'width': widthSlider});
+		widthSlider = 8000;
+	//	$('#concours .slider ul').css({'width': widthSlider});
 		$('#concours .slider .nav').fadeIn(300);
 	}).error(function() {
 		 $('#concours .slider').html('<p>Galerie bientôt disponible !</p>');
@@ -203,6 +203,15 @@ $(document).ready(function(){
 			}else if($('section').find('nav li.current').hasClass('ba_link')){
 				$('.video-background').videobackground('play');
 				$('#ba iframe').remove();
+			}else if($this.parent().hasClass('concours')){
+				// slider content width
+			/*	$('#concours .slider ul img').each(function(index){
+					$(this).load(function() {
+						widthSlider += $(this).width()+10;
+						console.log(widthSlider);
+						$('#concours .slider ul').css({'width': widthSlider});
+					});
+				}); */
 			}
 			// change menu active item
 			$('section').find('nav li.current').removeClass('current');
