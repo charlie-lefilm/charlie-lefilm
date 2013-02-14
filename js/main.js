@@ -72,14 +72,13 @@ $(document).ready(function(){
 		e.preventDefault();
 		var limitWidth = -($('#concours .slider ul img').last().position().left)-$(window).width();
 	//	var limitWidth = 0;
-	/*	$('#concours .slider ul').each('img', function()){
-			
-		} */
-		limitWidth += $('#concours .slider ul img').width()+10
+	/*	$('#concours .slider ul').each('img', function(this){
+			limitWidth += $(this).width()+10;
+		}); */
 		console.log(limitWidth);
-		if($('#concours .slider ul').position().left>=limitWidth){
+	//	if($('#concours .slider ul').position().left>=limitWidth){
 			$('#concours .slider ul').stop().animate({'left': '-=400px'});
-		}
+	//	}
 	});
 
 	// animation baloon
